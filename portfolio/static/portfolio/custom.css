@@ -1,0 +1,30 @@
+.navbar-nav .nav-link {
+    color: rgba(0,0,0,1) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.5) !important;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url('https://cdn.inspirationhut.net/wp-content/uploads/2013/05/201.png');
+}
+
+#blogtitle {
+    font-size: 6rem;
+}
+
+#logo {
+    font-family: 'Grenze Gotisch', cursive;
+    font-size: x-large;
+}
+
+@media (min-width: 992px) {
+    #hometext {
+        font-size: 3rem;
+    }
+    #blogdetailtitle {
+        font-size: 5rem;
+    }
+}

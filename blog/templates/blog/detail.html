@@ -1,0 +1,15 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+  
+
+
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ blog.blog_title }}</h1>
+<h5 class="text-center text-muted mb-5">{{ blog.blog_time|date:'jS F Y' }}</h5>
+<!-- <img class="text-center img-fluid mb-2" src="{{ blog.image.url }}" alt="" width="500" height="600"> -->
+
+
+{{ blog.blog_description|safe }}
+
+
+{% endblock content %}

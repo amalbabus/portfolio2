@@ -1,0 +1,75 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+  
+    {% load static %}
+    <div class="row justify-content-center my-3">
+        <div class="col-5">
+          <img  src="{% static 'portfolio/index.png' %}" class="img-fluid">
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-9 text-center">
+          <style>
+             .blink_me {
+           animation: blinker 3s linear infinite;
+            }
+
+        @keyframes blinker {
+            50% {
+         opacity: 0;
+        }
+          }
+          </style>
+    
+    <div class="blink_me"> <h5 id="hometext" class="font-weight-bold">എന്റെ മനസ്സൊരു നാടകവേദിയാണ്.. പഴയ ഓര്മകളും  ചരിത്രങ്ങളും എപ്പോഴും കളിച്ചുകൊണ്ടിരിക്കുന്ന നാടകവേദി.....</h5></div>
+      
+    
+      </div>
+      </div>
+
+
+<h2 class="mt-5">Portfolio</h2>
+<hr>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+
+    {% if project.url %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.description }}</p>
+
+  </div>
+  {% endfor %}
+  <div class="col-lg-4 col-md-6">
+    <h3>Send me a Message</h3>
+  <form method="POST">
+    <label for="id_name">Name {{ form.name }}</label>
+    <label for="id_email">Email {{ form.email }}</label>
+    
+
+    <label for="id_message">
+    Message  <textarea name="message" id="id_message" required="" cols="40" rows="5" maxlength="100"></textarea>
+ 
+    </label>
+   
+    {% csrf_token %}
+
+  <input type="submit" class = 'btn btn-primary' value="Send">
+  </form>
+</div>
+</div>
+
+{% endblock %}
+
+
+
