@@ -11,9 +11,10 @@
     <div class="row justify-content-center my-3">
      <div class="col-md-10">
 
-   <a href="{% url 'blog:detail' obj.id %}"> <h2>{{ obj.blog_title }}</h2></a>
+   <a style="font-size: larger;" href="{% url 'blog:detail' obj.id %}"> <h3>{{ obj.blog_title }}</h3></a>
+   
    <h5 class="text-muted"> {{ obj.blog_time| date:'d M Y' }}</h5>
-    <h4>{{ obj.blog_description|striptags|truncatechars:100 |safe }}</h4>
+    <h6>{{ obj.blog_description|striptags|truncatechars:100 |safe }}</h6>
 </div>
 </div>
 {% endfor %}
